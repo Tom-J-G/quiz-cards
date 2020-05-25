@@ -2,10 +2,15 @@ import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
 import axios from 'axios';
 
-import { GetCategories} from '../api/quizApi'
+import { GetCategories, GetQuizCards} from '../api/quizApi';
+import QuizForm from './QuizForm';
 
+type category = {
+    id:number,
+    name: string
+}
 interface IState {
-    categories: [],
+    categories: category[],
     quizCards: [], 
 }
 
@@ -21,6 +26,8 @@ export default class Home extends React.Component<{} & IProps, IState> {
             categories: [],
             quizCards: []
         }
+
+        this.getQuizCards = this.getQuizCards.bind(this);
     }
 
     componentDidMount() {
@@ -35,9 +42,26 @@ export default class Home extends React.Component<{} & IProps, IState> {
         })
     }
     
+    getQuizCards(catId:number, amount: number, difficulty?: string) {
+        GetQuizCards(amount, catId, 
+            (res: { data: { results: any; }; }) => {
+                this.setState(state => ({
+                    ...state,
+                    quizCards: res.data.results
+                }), () => console.log(this.state.quizCards))
+            }
+            , difficulty)
+    }
+
     render() {
         return (
             <Container fluid>
+                <Row>
+                    <Col>
+                        <h1>Quiz</h1>
+                    </Col>
+                </Row>
+                <QuizForm categories={this.state.categories} getQuizCards={this.getQuizCards} />
                 <Row>
                     <Col>
                     </Col>
