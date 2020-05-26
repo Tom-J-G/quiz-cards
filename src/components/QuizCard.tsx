@@ -1,5 +1,17 @@
 import React from 'react';
+import { Card, CardDeck, CardBody } from 'reactstrap';
 
-export default class QuizCard extends React.Component {
-
+interface IProps {
+    question: string,
+    answer: string,
+    possibleAnswers: string[]
+}
+export default class QuizCard extends React.Component<IProps> {
+    render() {
+        return (
+            <CardDeck>
+                
+            </CardDeck>
+        );
+    }
 }

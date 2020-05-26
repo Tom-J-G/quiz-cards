@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { GetCategories, GetQuizCards} from '../api/quizApi';
 import QuizForm from './QuizForm';
+import QuizCards from './QuizCards';
 
 type category = {
     id:number,
@@ -64,6 +65,7 @@ export default class Home extends React.Component<{} & IProps, IState> {
                 <QuizForm categories={this.state.categories} getQuizCards={this.getQuizCards} />
                 <Row>
                     <Col>
+                        <QuizCards quizCards={this.state.quizCards} />
                     </Col>
                 </Row>
             </Container>
