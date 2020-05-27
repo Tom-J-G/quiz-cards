@@ -1,6 +1,7 @@
 import React from 'react';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col, Container, CardDeck, CardGroup, CardColumns } from 'reactstrap';
 
+import { DecodeHtml } from './Helpers';
 import QuizCard from './QuizCard';
 
 type results = {
@@ -22,17 +23,19 @@ export default class QuizCards extends React.Component<IProps> {
         <Container id="quiz">
             <Row>
                 <Col>
+                <CardColumns>
                 {this.props.quizCards.map( (item) => {
-                    const answer:string = item.correct_answer;
+                    const answer:string = DecodeHtml(item.correct_answer);
                     const possibleAnswers: string[] = [...item.incorrect_answers, answer];
                     possibleAnswers.sort(() => Math.random() - .5); 
                         
                     return (
-                        <QuizCard  key="card" question={unescape(item.question)} answer={unescape(answer)} possibleAnswers={possibleAnswers} />
+                        <QuizCard  key="card" question={DecodeHtml(item.question)} answer={answer} possibleAnswers={possibleAnswers} />
                     );
                     }
                 )
                 }
+                </CardColumns>
                 </Col>
             </Row>
 
