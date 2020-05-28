@@ -23,7 +23,7 @@ export default class QuizCards extends React.Component<IProps> {
         <Container id="quiz">
             <Row>
                 <Col>
-                <CardColumns>
+                <div className="grid">
                 {this.props.quizCards.map( (item) => {
                     const answer:string = DecodeHtml(item.correct_answer);
                     const possibleAnswers: string[] = [...item.incorrect_answers, answer];
@@ -35,7 +35,7 @@ export default class QuizCards extends React.Component<IProps> {
                     }
                 )
                 }
-                </CardColumns>
+                </div>
                 </Col>
             </Row>
 

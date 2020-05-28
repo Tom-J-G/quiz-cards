@@ -2,6 +2,49 @@ $background-color: #252736;
 $color: #939AB4;
 
 body {
-    background-color: #252736;
-    color: $color;
+    background-color: #252736 !important;
+    color: $color !important;
+}
+
+#quizCard {
+    text-align: center;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    transform-style: preserve-3d;
+    transition: 150ms;
+    transform: rotateY(var(--rotate-y, 0)) translateY(var(--translate-y,0));
+
+    .front.card, .back.card {
+        position: absolute;
+        backface-visibility: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        width: 100%;
+    }
+    .back.card {
+        transform: rotateY(180deg);
+    }
+    .front.card {
+        left: 0;
+    }
+    
+    &.flip {
+       --rotate-y: 180deg;
+    }
+    &:hover {
+        --translate-y: -2px;
+    }
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap:1rem;
 }

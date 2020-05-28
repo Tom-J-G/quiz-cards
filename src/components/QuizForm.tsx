@@ -21,7 +21,7 @@ export default class QuizForm extends React.Component<IProps & functions, IState
         super(props)
 
         this.state = {
-            categoryId: 1,
+            categoryId: 9,
             amount: 10,
             difficulty: "undefined"
         }
@@ -66,7 +66,7 @@ export default class QuizForm extends React.Component<IProps & functions, IState
             <Container>
                 <Row>
                     <Col>
-                        <Form >
+                       
                             <FormGroup>
                                 <Label>Category</Label>
                                 <Input type="select" name="category" id="catOptions" onChange={this.handleCategory}>
@@ -90,7 +90,7 @@ export default class QuizForm extends React.Component<IProps & functions, IState
                             <FormGroup>
                                 <Button onClick={this.submitForm}>Get Quiz Cards</Button>
                             </FormGroup>
-                        </Form>
+                        
                     </Col>
                 </Row>
             </Container>
