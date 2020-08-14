@@ -1,6 +1,9 @@
 ## Quiz Cards
 Using the opentdb Api to get trivia questions and put them into cards that when clicked rotate to reveal the answer.
 
+<img width="900" alt="Screenshot 2020-08-14 at 14 16 14" src="https://user-images.githubusercontent.com/64728911/90256153-31e9d200-de3d-11ea-9ddf-b45683599ae5.png">
+
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
