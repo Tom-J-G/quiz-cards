@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Container, CardDeck, CardGroup, CardColumns } from 'reactstrap';
+import { Row, Col, Container } from 'reactstrap';
 
 import { DecodeHtml } from './Helpers';
 import QuizCard from './QuizCard';

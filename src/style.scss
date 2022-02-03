@@ -15,7 +15,7 @@ body {
     cursor: pointer;
     margin: 0.5rem 0;
     transform-style: preserve-3d;
-    transition: 150ms;
+    transition: 500ms;
     transform: rotateY(var(--rotate-y, 0)) translateY(var(--translate-y,0));
 
     .front.card, .back.card {

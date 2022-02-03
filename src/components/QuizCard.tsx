@@ -1,5 +1,5 @@
 import React, { createRef} from 'react';
-import { Card, CardDeck, CardBody, CardTitle, CardText } from 'reactstrap';
+import { Card, CardTitle, CardText } from 'reactstrap';
 
 import { DecodeHtml } from './Helpers';
 
@@ -53,7 +53,7 @@ export default class QuizCard extends React.Component<IProps, IState> {
         const frontHeight = this?.frontElement?.current?.getBoundingClientRect().height;
         const backHeight = this?.backElement?.current?.getBoundingClientRect().height;
         console.log(frontHeight);
-        if(frontHeight != undefined && backHeight != undefined) {
+        if(frontHeight !== undefined && backHeight !== undefined) {
             this.setState(state => ({
                 ...state,
                 height: Math.max(frontHeight,backHeight,100)

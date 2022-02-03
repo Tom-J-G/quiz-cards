@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
-import axios from 'axios';
 
 import { GetCategories, GetQuizCards} from '../api/quizApi';
 import QuizForm from './QuizForm';
@@ -56,7 +55,7 @@ export default class Home extends React.Component<{} & IProps, IState> {
 
     render() {
         return (
-            <Container fluid>
+            <Container>
                 <Row>
                     <Col>
                         <h1>Quiz</h1>
